@@ -4,6 +4,7 @@ import { font } from "../Mixins/mixins";
 export default function ButtonFilled(props) {
   return (
     <TouchableOpacity style={styles.wrapper} onPress={props.PressFunction}>
+      {props.children}
       <Text style={styles.btntxt}>{props.title}</Text>
     </TouchableOpacity>
   );
@@ -19,6 +20,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 16,
     width: 140,
+    flexDirection: "row",
   },
   btntxt: {
     ...font("Inter-Regular", 14, 500, 20, "#FFF"),

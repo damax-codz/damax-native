@@ -7,10 +7,11 @@ export default function TeamStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Team"
+        name="TeamPage"
         component={Team}
         options={{
-          title: "Teampage",
+            title: "Teampage",
+            headerShown: false,  
         }}
       />
     </Stack.Navigator>

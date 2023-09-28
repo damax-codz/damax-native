@@ -1,14 +1,11 @@
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
-// images
-const logo = require("../../assets/combyn.png");
-
-export default function Nav() {
+export default function Nav({ navigation }) {
   return (
     <View style={styles.container}>
-      <Image source={logo} />
-      <TouchableOpacity>
+      <Image source={require("../../assets/combyn.png")} />
+      <TouchableOpacity onPress={() => navigation.openDrawer()}>
         <MaterialIcons name="menu" size={40} color="black" />
       </TouchableOpacity>
     </View>
@@ -18,8 +15,8 @@ export default function Nav() {
 const styles = StyleSheet.create({
   container: {
     paddingVertical: 12,
-    paddingStart: 16,
-    paddingEnd: 8,
+    paddingHorizontal: 8,
+    marginTop: 12,
     backgroundColor: "#fff",
     flexDirection: "row",
     alignItems: "center",

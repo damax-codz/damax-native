@@ -12,15 +12,13 @@ export default function HomeStack() {
         component={Home}
         options={{
           title: "Homepage",
-          headerStyle: {
-            backgroundColor: "#000000",
-          },
+          headerShown: false,
         }}
       />
       <Stack.Screen
         name="User"
         component={User}
-        options={{ title: "Dammy UserPage" }}
+        options={{ title: "Dammy UserPage", headerShown: false }}
       />
     </Stack.Navigator>
   );

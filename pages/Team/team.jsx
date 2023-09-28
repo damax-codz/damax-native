@@ -1,6 +1,16 @@
 import React from "react";
-import { Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function Team() {
-  return <Text>team</Text>;
+  return (
+    <View style={styles.body}>
+      <Text>team</Text>
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  body: {
+    padding: 16,
+  },
+});
