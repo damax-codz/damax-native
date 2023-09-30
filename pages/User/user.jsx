@@ -11,10 +11,10 @@ export default function User({ navigation }) {
     <View style={styles.container}>
       <Text style={styles.txtbold}>User page</Text>
       <View>
-        <Text style={styles.txtmedium}>{route.params.item.name}</Text>
-        <Text style={styles.txtmedium}>{route.params.item.description}</Text>
-        <Text style={styles.txtmedium}>{route.params.item.rating}</Text>
-        <Text style={styles.txtmedium}>{route.params.item.title}</Text>
+        <Text style={styles.txtmedium}>Name: {route.params.item.name}</Text>
+        <Text style={styles.txtmedium}>Title: {route.params.item.title}</Text>
+        <Text style={styles.txtmedium}>Rating: {route.params.item.rating}</Text>
+        <Text style={styles.txtmedium}>Description: {route.params.item.description}</Text>
         <ButtonFilled
           title="Go Home"
           PressFunction={() => navigation.goBack()}

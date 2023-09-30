@@ -11,84 +11,27 @@ import ButtonFilled from "../../components/Buttons/ButtonFilled";
 import ButtonStack from "../../components/Buttons/ButtonStack";
 import { useState } from "react";
 import { MaterialIcons } from "@expo/vector-icons";
+import AddUserModal from "../../components/Modal/AddUserModal";
 
 export default function Home({ navigation }) {
-  const [userData, setUserData] = useState([
-    {
-      name: "Bhadmus Damilola",
-      title: "Frontend Developer",
-      rating: "mid level",
-      description: "A good guy",
-    },
-    {
-      name: "Bhadmus Eniola",
-      title: "Quality Assurance",
-      rating: "mid level",
-      description: "A good girl",
-    },
-    {
-      name: "King David",
-      title: "Frontend Developer",
-      rating: "senior level",
-      description: "A good guy",
-    },
-    {
-      name: "Bhadmus Damilola",
-      title: "Frontend Developer",
-      rating: "mid level",
-      description: "A good guy",
-    },
-    {
-      name: "Bhadmus Damilola",
-      title: "Frontend Developer",
-      rating: "mid level",
-      description: "A good guy",
-    },
-    {
-      name: "Bhadmus Damilola",
-      title: "Frontend Developer",
-      rating: "mid level",
-      description: "A good guy",
-    },
-    {
-      name: "Bhadmus Damilola",
-      title: "Frontend Developer",
-      rating: "mid level",
-      description: "A good guy",
-    },
-    {
-      name: "King David",
-      title: "Frontend Developer",
-      rating: "senior level",
-      description: "A good guy",
-    },
-    {
-      name: "King David",
-      title: "Frontend Developer",
-      rating: "senior level",
-      description: "A good guy",
-    },
-    {
-      name: "King David",
-      title: "Frontend Developer",
-      rating: "senior level",
-      description: "A good guy",
-    },
-  ]);
+  const [userData, setUserData] = useState([]);
+  const [modalState, setModalState] = useState(false);
+  function closeModal() {
+    setModalState(!modalState);
+  }
+  function addData(newData) {
+    setUserData([newData, ...userData]);
+  }
   return (
     <ScrollView style={styles.container}>
-      {/* <Nav /> */}
       <View style={styles.body}>
         <View style={styles.header}>
           <View>
-            <Text style={styles.txtbold}>Welcome Olivia</Text>
+            <Text style={styles.txtbold}>Welcome Damilola</Text>
             <Text style={styles.txtlgt}>Complete today’s tasks</Text>
           </View>
           <View>
-            <ButtonFilled
-              title="Add User"
-              PressFunction={() => Alert.alert("Confirm Page change")}
-            >
+            <ButtonFilled title="Add User" PressFunction={closeModal}>
               <MaterialIcons name="add" size={24} color="white" />
             </ButtonFilled>
             <ButtonStack />
@@ -125,6 +68,11 @@ export default function Home({ navigation }) {
           );
         })}
       </View>
+      <AddUserModal
+        modalState={modalState}
+        closeModal={closeModal}
+        addData={addData}
+      />
     </ScrollView>
   );
 }
@@ -145,7 +93,7 @@ const styles = StyleSheet.create({
   },
   list: {
     backgroundColor: "white",
-    paddingHorizontal: 4,
+    paddingHorizontal: 8,
     paddingVertical: 16,
     marginVertical: 4,
     borderRadius: 8,

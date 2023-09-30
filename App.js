@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import * as Font from "expo-font";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import DrawerStack from "./routes/drawer";
+import HomeStack from "./routes/homeStack";
 
 export default function App() {
   const [isFontLoaded, setFontLoaded] = useState(false);
@@ -28,7 +29,7 @@ export default function App() {
     );
   }
 
-  return <DrawerStack />;
+  return <HomeStack />;
 }
 
 const styles = StyleSheet.create({
