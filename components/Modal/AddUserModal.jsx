@@ -1,16 +1,5 @@
 import React from "react";
-import {
-  Alert,
-  Button,
-  Keyboard,
-  Modal,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableWithoutFeedback,
-  View,
-} from "react-native";
+import { Modal, StyleSheet, Text, TextInput, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { font } from "../Mixins/mixins";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -28,7 +17,6 @@ const schema = yup.object().shape({
 export default function AddUserModal(props) {
   return (
     <View>
-      <StatusBar barStyle="dark-content" />
       <Modal visible={props.modalState}>
         <View style={styles.header}>
           <Text style={styles.txtmedium}>Add User</Text>
@@ -131,7 +119,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     width: "100%",
     flexDirection: "row",
-    marginTop: 20,
+    // marginTop: 20,
     paddingHorizontal: 12,
     paddingVertical: 12,
     height: 50,

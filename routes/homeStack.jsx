@@ -3,11 +3,13 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import User from "./../pages/User/user";
 import DrawerStack from "./drawer";
 import { NavigationContainer } from "@react-navigation/native";
+import { StatusBar } from "react-native";
 
 const Stack = createNativeStackNavigator();
 export default function HomeStack() {
   return (
     <NavigationContainer>
+      <StatusBar animated={true} style={{ height: 40 }}  hidden={false} />
       <Stack.Navigator>
         <Stack.Screen
           name="HomePage"
@@ -24,7 +26,7 @@ export default function HomeStack() {
           options={({ route }) => ({
             title: route.params?.item?.name || "Userpage",
           })}
-          initialParams={{ item: { name: "Userpage" } }}
+          initialParams={{ item: { name: "Userpage'" } }}
         />
       </Stack.Navigator>
     </NavigationContainer>
